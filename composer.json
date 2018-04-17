@@ -2,12 +2,23 @@
     "name": "phuctran/core",
     "description": "Core library",
     "type": "library",
+    "keywords": [
+        "core",
+        "laravel",
+        "lumen"
+    ],
     "authors": [
         {
             "name": "Phuc Tran",
             "email": "phuctran.it.89@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "PhucTran\\Core\\": "src/"
+        }
+    },
+    "license": "MIT",
     "require": {
         "php": "^7.1",
         "szymach/c-pchart": "^3.0",
