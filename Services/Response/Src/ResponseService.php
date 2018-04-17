@@ -11,6 +11,7 @@ namespace PhucTran\Core\Services\Response\Src;
 
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use PhucTran\Core\Services\S3\S3Facade;
 
 class ResponseService
 {
@@ -41,11 +42,11 @@ class ResponseService
             'data'    => []
         ];
 
-        if ($code == HTTP_OK) {
+        if ($code == Response::HTTP_OK) {
             $response['status'] = true;
         }
 
-        if ($code == HTTP_OK) {
+        if ($code == Response::HTTP_OK) {
             if (is_string($data)) {
                 $response['message'] = $data;
             }
@@ -84,7 +85,7 @@ class ResponseService
      */
     public function displayFromS3(string $pathOnS3)
     {
-        $url = \S3::getPreSignedUrl($pathOnS3);
+        $url = S3Facade::getPreSignedUrl($pathOnS3);
         header('Content-type: ' . $this->mimeType($pathOnS3));
         readfile($url);
     }
