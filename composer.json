@@ -1,0 +1,23 @@
+{
+    "name": "phuctran/core",
+    "description": "Core library",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Phuc Tran",
+            "email": "phuctran.it.89@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "szymach/c-pchart": "^3.0",
+        "sybio/image-workshop": "^2.0",
+        "php-ai/php-ml": "^0.6.2",
+        "mjaschen/phpgeo": "^2.0",
+        "jbbcode/jbbcode": "1.3.*"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.7",
+        "devster/ubench": "~2.0.0"
+    }
+}
