@@ -6,7 +6,7 @@
  * Time: 6:11 PM
  */
 
-namespace PhucTran\Core\Services\Validator\Src;
+namespace Sel2b\Core\Services\Validator\Src;
 
 
 interface ValidationRuleInterface

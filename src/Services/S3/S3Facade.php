@@ -1,11 +1,11 @@
 <?php
 
-namespace PhucTran\Core\Services\S3;
+namespace Sel2b\Core\Services\S3;
 
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Facade;
-use PhucTran\Core\Services\S3\Src\S3Service;
+use Sel2b\Core\Services\S3\Src\S3Service;
 
 /**
  * Created by PhpStorm.
@@ -17,16 +17,17 @@ use PhucTran\Core\Services\S3\Src\S3Service;
 /**
  * Class S3Facade
  *
- * @method static false|string upload(string $pathOnS3, string $pathFile, string $visibility = null)
- * @method static false|string uploadFile(string $pathOnS3, File $srcFile, string $visibility = null)
+ * @method static false|string upload(string $pathOnS3, string $pathFile, string $visibility = null, bool $encrypt = true)
+ * @method static false|string uploadFile(string $pathOnS3, File $srcFile, string $visibility = null, bool $encrypt = true)
  * @method static void download(string $pathOnS3, string $pathOnLocal)
  * @method static string getContent(string $pathOnS3)
  * @method static bool exists(string $pathOnS3)
  * @method static string getUrl(string $pathOnS3)
- * @method static string getPreSignedUrl(string $pathOnS3, int $expTime = 30)
+ * @method static string getPreSignedUrl(string $pathOnS3, int $expTime = null)
+ * @method static string getSignedUrl(string $pathOnS3, int $expTime = null)
  * @method static FilesystemAdapter getStorage()
  *
- * @package App\Services\S3
+ * @package Sel2b\Core\Services\S3
  */
 class S3Facade extends Facade
 {

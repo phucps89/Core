@@ -6,7 +6,7 @@
  * Time: 7:23 PM
  */
 
-namespace PhucTran\Core\Services\BladeCompiler\Src;
+namespace Sel2b\Core\Services\BladeCompiler\Src;
 
 
 use Illuminate\Support\Facades\Blade;

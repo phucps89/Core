@@ -6,7 +6,7 @@
  * Time: 7:54 AM
  */
 
-namespace PhucTran\Core\Services\BBCodeCompiler\Src;
+namespace Sel2b\Core\Services\BBCodeCompiler\Src;
 
 
 use JBBCode\CodeDefinition;

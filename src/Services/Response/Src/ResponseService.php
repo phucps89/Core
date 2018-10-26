@@ -6,12 +6,12 @@
  * Time: 13:15
  */
 
-namespace PhucTran\Core\Services\Response\Src;
-
+namespace Sel2b\Core\Services\Response\Src;
 
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use PhucTran\Core\Services\S3\S3Facade;
+use Sel2b\Core\Libraries\Helpers;
+use Sel2b\Core\Services\S3\S3Facade;
 
 class ResponseService
 {
@@ -36,38 +36,38 @@ class ResponseService
      */
     public function send($data, $code = Response::HTTP_OK, $message = null)
     {
-        $response = [
+        $result = [
             'status'  => false,
             'message' => null,
             'data'    => []
         ];
 
         if ($code == Response::HTTP_OK) {
-            $response['status'] = true;
+            $result['status'] = true;
         }
 
         if ($code == Response::HTTP_OK) {
             if (is_string($data)) {
-                $response['message'] = $data;
+                $result['message'] = $data;
             }
             else {
-                $response['data'] = $data;
-                $response['message'] = $message;
+                $result['data'] = $data;
+                $result['message'] = $message;
             }
         }
         else {
             if ($data instanceof \Exception){
-                $response['message'] = $data->getMessage();
+                $result['message'] = $data->getMessage();
             }
             else if (is_string($data)) {
-                $response['message'] = $data;
+                $result['message'] = $data;
             }
             else {
-                $response['data'] = $data;
-                $response['message'] = $message;
+                $result['data'] = $data;
+                $result['message'] = $message;
             }
         }
-        return response()->json($response, $code);
+        return response()->json($result, $code);
     }
 
     /**
@@ -75,9 +75,12 @@ class ResponseService
      *
      * @return mixed
      */
-    public function download(string $path)
+    public function download(string $path, string $fileName = null, $headers = [])
     {
-        return response()->download(Storage::get($path))->deleteFileAfterSend(true);
+        if(!Helpers::isAbsolutePath($path)){
+            $path = Storage::get($path);
+        }
+        return response()->download($path, $fileName, $headers)->deleteFileAfterSend(true);
     }
 
     /**
@@ -90,9 +93,21 @@ class ResponseService
         readfile($url);
     }
 
+    /**
+     * @param string $pathOnS3
+     */
+    public function display(string $path)
+    {
+        header('Content-type: ' . $this->mimeType($path));
+        readfile($path);
+    }
+
     private function mimeType($path)
     {
         preg_match("|\.([a-z0-9]{2,4})$|i", $path, $fileSuffix);
+        if(empty($fileSuffix)){
+            return mime_content_type($path);
+        }
 
         switch (strtolower($fileSuffix[1])) {
             case 'js' :

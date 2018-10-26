@@ -6,7 +6,7 @@
  * Time: 10:02 PM
  */
 
-namespace PhucTran\Core\Services\BBCodeCompiler\Src;
+namespace Sel2b\Core\Services\BBCodeCompiler\Src;
 
 use DOMDocument;
 

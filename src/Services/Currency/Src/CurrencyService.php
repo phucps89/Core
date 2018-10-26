@@ -1,6 +1,6 @@
 <?php
 
-namespace PhucTran\Core\Services\Currency\Src;
+namespace Sel2b\Core\Services\Currency\Src;
 
 /**
  * Created by PhpStorm.

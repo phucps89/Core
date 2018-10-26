@@ -1,10 +1,10 @@
 <?php
 
-namespace PhucTran\Core\Services\Response;
+namespace Sel2b\Core\Services\Response;
 
-use PhucTran\Core\Services\Response\Src\ResponseService;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Facade;
+use Sel2b\Core\Services\Response\Src\ResponseService;
 
 /**
  * Created by PhpStorm.
@@ -17,10 +17,11 @@ use Illuminate\Support\Facades\Facade;
  * Class ResponseFacade
  *
  * @method static mixed send(string|array|object $data = null, int $statusCode = Response::HTTP_OK, string $message)
- * @method static mixed download(string $path)
+ * @method static mixed download(string $path, string $fileName = null, $headers = [])
  * @method static displayFromS3(string $pathOnS3)
+ * @method static display(string $path)
  *
- * @package App\Services\Response
+ * @package Sel2b\Core\Services\Response
  */
 class ResponseFacade extends Facade
 {

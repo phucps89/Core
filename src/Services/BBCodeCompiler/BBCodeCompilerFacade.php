@@ -6,10 +6,10 @@
  * Time: 10:02 PM
  */
 
-namespace PhucTran\Core\Services\BBCodeCompiler;
+namespace Sel2b\Core\Services\BBCodeCompiler;
 
 
-use PhucTran\Core\Services\BBCodeCompiler\Src\BBCodeCompilerService;
+use Sel2b\Core\Services\BBCodeCompiler\Src\BBCodeCompilerService;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @method static string compile(string $content)
  *
- * @package App\Services\BBCodeCompiler
+ * @package Sel2b\Core\Services\BBCodeCompiler
  */
 class BBCodeCompilerFacade extends Facade
 {

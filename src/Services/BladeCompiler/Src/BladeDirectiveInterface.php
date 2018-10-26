@@ -6,7 +6,7 @@
  * Time: 7:46 PM
  */
 
-namespace PhucTran\Core\Services\BladeCompiler\Src;
+namespace Sel2b\Core\Services\BladeCompiler\Src;
 
 
 interface BladeDirectiveInterface

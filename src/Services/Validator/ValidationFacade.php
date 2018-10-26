@@ -6,19 +6,19 @@
  * Time: 6:15 PM
  */
 
-namespace PhucTran\Core\Services\Validator;
+namespace Sel2b\Core\Services\Validator;
 
 
-use PhucTran\Core\Services\Validator\Src\ValidationRuleInterface;
-use PhucTran\Core\Services\Validator\Src\ValidationService;
+use Sel2b\Core\Services\Validator\Src\ValidationRuleInterface;
+use Sel2b\Core\Services\Validator\Src\ValidationService;
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class ResponseFacade
  *
- * @method static mixed validate(array|object $data, ValidationRuleInterface|string $rule)
+ * @method static void validate(array|object $data, ValidationRuleInterface|string $rule)
  *
- * @package App\Services\Validator
+ * @package Sel2b\Core\Services\Validator
  */
 class ValidationFacade extends Facade
 {

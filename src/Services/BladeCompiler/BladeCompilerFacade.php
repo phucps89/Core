@@ -6,10 +6,10 @@
  * Time: 7:24 PM
  */
 
-namespace PhucTran\Core\Services\BladeCompiler;
+namespace Sel2b\Core\Services\BladeCompiler;
 
 
-use PhucTran\Core\Services\BladeCompiler\Src\BladeCompilerService;
+use Sel2b\Core\Services\BladeCompiler\Src\BladeCompilerService;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void compileString(string $templateContent, string|object|array $params = null)
  * @method static void compileFile(string $templateFile, string|object|array $params = null)
  *
- * @package App\Services\BladeCompiler
+ * @package Sel2b\Core\Services\BladeCompiler
  */
 class BladeCompilerFacade extends Facade
 {

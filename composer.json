@@ -1,9 +1,10 @@
 {
-    "name": "phuctran/core",
-    "description": "Core library",
+    "name": "sel2b/core",
+    "description": "Core library for Sel2b",
     "type": "library",
     "keywords": [
         "core",
+        "sel2b",
         "laravel",
         "lumen"
     ],
@@ -15,17 +16,27 @@
     ],
     "autoload": {
         "psr-4": {
-            "PhucTran\\Core\\": "src/"
+            "Sel2b\\Core\\": "src/"
         }
     },
     "license": "MIT",
     "require": {
-        "php": "^7.1",
-        "szymach/c-pchart": "^3.0",
+        "php": ">=7.1.3",
         "sybio/image-workshop": "^2.0",
         "php-ai/php-ml": "^0.6.2",
         "mjaschen/phpgeo": "^2.0",
-        "jbbcode/jbbcode": "1.3.*"
+        "jbbcode/jbbcode": "1.3.*",
+        "laravel/lumen-framework": "5.7.*",
+        "guzzlehttp/guzzle": "~6.0",
+        "prettus/l5-repository": "^2.6",
+        "irazasyed/larasupport": "~1.0",
+        "league/flysystem": "^1.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "maatwebsite/excel": "~2.1.0",
+        "illuminate/mail": "^5.2",
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "^7.0",
+        "laravelista/lumen-vendor-publish": "^2.1",
+        "melihovv/laravel-log-viewer": "^5.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.7",

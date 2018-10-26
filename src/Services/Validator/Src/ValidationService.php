@@ -6,7 +6,7 @@
  * Time: 6:09 PM
  */
 
-namespace PhucTran\Core\Services\Validator\Src;
+namespace Sel2b\Core\Services\Validator\Src;
 
 
 use Illuminate\Validation\ValidationException;
@@ -38,7 +38,12 @@ class ValidationService
         // See if we should be validating against a ValidationRuleInterface
         if (is_subclass_of($rules, ValidationRuleInterface::class)) {
             // Create ArrayObject from $input & get data as array
-            $data = json_decode(json_encode($input), true);
+            if(is_object($input)) {
+                $data = json_decode(json_encode($input), true);
+            }
+            else{
+                $data = $input;
+            }
             // See if descriptor is provided
             if (is_string($rules::descriptor())) {
                 // Get default validation messages & apply overrides from $rules::class

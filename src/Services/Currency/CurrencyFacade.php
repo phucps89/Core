@@ -1,8 +1,8 @@
 <?php
 
-namespace PhucTran\Core\Services\Currency;
+namespace Sel2b\Core\Services\Currency;
 
-use PhucTran\Core\Services\Currency\Src\CurrencyService;
+use Sel2b\Core\Services\Currency\Src\CurrencyService;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @method static string formatUSD(float $value)
  *
- * @package App\Services\Currency
+ * @package Sel2b\Core\Services\Currency
  */
 class CurrencyFacade extends Facade
 {
