@@ -24,7 +24,7 @@ class Sel2bCoreServiceProvider extends ServiceProvider
     {
         //Register language
         $langFolder = __DIR__ . '/../resources/lang';
-        Lang::addNamespace(Constant::NAMESPACE, $langFolder);
+        $this->loadTranslationsFrom($langFolder, Constant::NAMESPACE);
 
         //Register view
         $viewDirPackage = __DIR__ . '/../resources/views';
