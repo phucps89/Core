@@ -18,6 +18,6 @@
     }
 </style>
 <body>
-    <h1>{{trans("$namespace::messages.welcome_to_sel2b_core")}}</h1>
+    <h1>{{trans("$namespace::sel2bcore.welcome_to_sel2b_core")}}</h1>
 </body>
 </html>

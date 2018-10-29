@@ -32,8 +32,8 @@ class Sel2bCoreServiceProvider extends ServiceProvider
 
         $this->publishes([
             $viewDirPackage => base_path('resources/views/vendor/Sel2b/Core'),
-            $langFolder     => base_path('resources/lang/vendor/Sel2b/Core'),
-        ]);
+            $langFolder     => base_path('resources/lang/en'),
+        ], 'Sel2bCore');
 
         if (!$this->app->routesAreCached()) {
             require __DIR__ . '/../routes/routes.php';
